@@ -6,27 +6,31 @@
     <title>Untuk Gabriela ❤️</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ffdce8, #fff1d6);
             min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffe0eb, #fff3d6);
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
             overflow: hidden;
         }
 
         .hati {
             position: fixed;
-            top: -30px;
+            top: -40px;
             font-size: 25px;
-            animation: turun 5s linear infinite;
+            animation: jatuh 6s linear infinite;
         }
 
         .hati:nth-child(1) {
             left: 10%;
+            animation-delay: 0s;
         }
 
         .hati:nth-child(2) {
@@ -44,9 +48,9 @@
             animation-delay: 3s;
         }
 
-        @keyframes turun {
+        @keyframes jatuh {
             from {
-                transform: translateY(-30px);
+                transform: translateY(-40px);
             }
 
             to {
@@ -55,50 +59,267 @@
         }
 
         .kotak {
-            width: 85%;
-            max-width: 500px;
+            width: 90%;
+            max-width: 650px;
             background: white;
-            padding: 30px 20px;
-            border-radius: 25px;
+            border-radius: 30px;
+            padding: 25px;
+            text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            position: relative;
             z-index: 2;
         }
 
         h1 {
             color: #ff6f91;
+            margin-bottom: 5px;
         }
 
-        .hewan {
-            font-size: 75px;
-            margin: 15px;
+        .judul {
+            color: #777;
+            margin-bottom: 10px;
         }
 
-        p {
+        /* tempat beruang */
+
+        .tempat-beruang {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .beruang {
+            position: absolute;
+            bottom: 10px;
+            width: 110px;
+            height: 190px;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+        }
+
+        .beruang-kiri {
+            left: 5%;
+            animation-name: datangKiri;
+        }
+
+        .beruang-kanan {
+            right: 5%;
+            animation-name: datangKanan;
+        }
+
+        @keyframes datangKiri {
+            0% {
+                left: 5%;
+            }
+
+            60% {
+                left: 38%;
+            }
+
+            100% {
+                left: 39%;
+            }
+        }
+
+        @keyframes datangKanan {
+            0% {
+                right: 5%;
+            }
+
+            60% {
+                right: 38%;
+            }
+
+            100% {
+                right: 39%;
+            }
+        }
+
+        /* kepala */
+
+        .kepala {
+            width: 80px;
+            height: 75px;
+            background: #a96f45;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 15px;
+            z-index: 3;
+        }
+
+        .telinga {
+            width: 30px;
+            height: 30px;
+            background: #a96f45;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+        }
+
+        .telinga.kiri {
+            left: 0;
+        }
+
+        .telinga.kanan {
+            right: 0;
+        }
+
+        .mata {
+            width: 8px;
+            height: 8px;
+            background: #222;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+        }
+
+        .mata.kiri {
+            left: 23px;
+        }
+
+        .mata.kanan {
+            right: 23px;
+        }
+
+        .hidung {
+            width: 15px;
+            height: 12px;
+            background: #222;
+            border-radius: 50%;
+            position: absolute;
+            top: 43px;
+            left: 33px;
+        }
+
+        /* badan */
+
+        .badan {
+            width: 80px;
+            height: 105px;
+            background: #a96f45;
+            border-radius: 40px;
+            position: absolute;
+            top: 65px;
+            left: 15px;
+        }
+
+        .perut {
+            width: 45px;
+            height: 60px;
+            background: #d99b6c;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 18px;
+        }
+
+        /* kaki */
+
+        .kaki {
+            width: 32px;
+            height: 45px;
+            background: #8d5b38;
+            border-radius: 20px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .kaki.kiri {
+            left: 15px;
+        }
+
+        .kaki.kanan {
+            right: 15px;
+        }
+
+        /* tangan */
+
+        .tangan {
+            width: 65px;
+            height: 25px;
+            background: #a96f45;
+            border-radius: 20px;
+            position: absolute;
+            top: 90px;
+            z-index: 1;
+        }
+
+        .tangan-kiri {
+            left: -35px;
+            transform: rotate(20deg);
+        }
+
+        .tangan-kanan {
+            right: -35px;
+            transform: rotate(-20deg);
+        }
+
+        /* tangan dibuat mengarah ke tengah */
+
+        .beruang-kiri .tangan-kanan {
+            transform: rotate(15deg);
+        }
+
+        .beruang-kanan .tangan-kiri {
+            transform: rotate(-15deg);
+        }
+
+        .peluk {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 35px;
+            opacity: 0;
+            animation: munculHati 4s forwards;
+            animation-delay: 3.5s;
+            z-index: 5;
+        }
+
+        @keyframes munculHati {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.5);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.3);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        .pesan {
             color: #555;
             line-height: 1.7;
         }
 
         button {
+            margin-top: 10px;
+            border: none;
             background: #ff6f91;
             color: white;
-            border: none;
-            padding: 12px 25px;
+            padding: 13px 25px;
             border-radius: 25px;
             font-size: 16px;
             cursor: pointer;
-            margin-top: 10px;
         }
 
         button:hover {
             background: #ff4f78;
         }
 
-        #pesan {
+        #kejutan {
             display: none;
+            margin-top: 20px;
             color: #ff5c8a;
             font-weight: bold;
-            margin-top: 20px;
+            line-height: 1.7;
         }
     </style>
 </head>
@@ -114,56 +335,122 @@
 
         <h1>Untuk Gabriela ❤️</h1>
 
-        <div class="hewan">
-            🧸 🐼
+        <div class="judul">
+            Dari beruang kecil untuk orang yang aku sayang 🧸
         </div>
 
-        <p>
+        <div class="tempat-beruang">
+
+            <!-- Beruang kiri -->
+            <div class="beruang beruang-kiri">
+
+                <div class="kepala">
+                    <div class="telinga kiri"></div>
+                    <div class="telinga kanan"></div>
+
+                    <div class="mata kiri"></div>
+                    <div class="mata kanan"></div>
+
+                    <div class="hidung"></div>
+                </div>
+
+                <div class="badan">
+                    <div class="perut"></div>
+                </div>
+
+                <div class="tangan tangan-kiri"></div>
+                <div class="tangan tangan-kanan"></div>
+
+                <div class="kaki kiri"></div>
+                <div class="kaki kanan"></div>
+
+            </div>
+
+
+            <!-- Beruang kanan -->
+            <div class="beruang beruang-kanan">
+
+                <div class="kepala">
+                    <div class="telinga kiri"></div>
+                    <div class="telinga kanan"></div>
+
+                    <div class="mata kiri"></div>
+                    <div class="mata kanan"></div>
+
+                    <div class="hidung"></div>
+                </div>
+
+                <div class="badan">
+                    <div class="perut"></div>
+                </div>
+
+                <div class="tangan tangan-kiri"></div>
+                <div class="tangan tangan-kanan"></div>
+
+                <div class="kaki kiri"></div>
+                <div class="kaki kanan"></div>
+
+            </div>
+
+            <div class="peluk">❤️</div>
+
+        </div>
+
+        <div class="pesan">
+
             Hai Gabriela 🥺❤️
+
             <br><br>
 
             Aku tahu kamu lagi haid dan mungkin
             lagi merasa sakit atau nggak nyaman.
+
             <br><br>
 
             Jadi jangan terlalu capek ya.
             Istirahat yang cukup dan jaga diri baik-baik. 🌷
+
             <br><br>
 
-            Aku mungkin nggak bisa menghilangkan
-            rasa sakit kamu, tapi aku tetap mau
-            nemenin kamu.
-            <br><br>
+            Kalau aku bisa, aku pengen jadi beruang
+            yang bisa nemenin kamu setiap saat. 🧸
 
-            Anggap aja ada beruang 🧸 dan panda 🐼
-            yang selalu siap nemenin dan kasih
-            kamu pelukan. ❤️
-        </p>
+        </div>
 
         <button onclick="peluk()">
             Klik untuk pelukan 🫂
         </button>
 
-        <div id="pesan">
-            🧸 ❤️ 🐼
+        <div id="kejutan">
+
+            🧸❤️🧸
+
             <br><br>
 
             Sini, peluk dulu 🤗
+
             <br>
+
             Istirahat ya, sayang.
+
             <br>
+
             Aku temenin kamu. ❤️
+
             <br><br>
 
             Aku sayang kamu, Gabriela ❤️
+
         </div>
 
     </div>
 
     <script>
+
         function peluk() {
-            document.getElementById("pesan").style.display = "block";
+            document.getElementById("kejutan").style.display = "block";
         }
+
     </script>
 
 </body>
