@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Gabriela ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffdce8, #fff1d6);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hati {
+            position: fixed;
+            top: -30px;
+            font-size: 25px;
+            animation: turun 5s linear infinite;
+        }
+
+        .hati:nth-child(1) {
+            left: 10%;
+        }
+
+        .hati:nth-child(2) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .hati:nth-child(3) {
+            left: 60%;
+            animation-delay: 1s;
+        }
+
+        .hati:nth-child(4) {
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+        @keyframes turun {
+            from {
+                transform: translateY(-30px);
+            }
+
+            to {
+                transform: translateY(110vh);
+            }
+        }
+
+        .kotak {
+            width: 85%;
+            max-width: 500px;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #ff6f91;
+        }
+
+        .hewan {
+            font-size: 75px;
+            margin: 15px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        button {
+            background: #ff6f91;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #ff4f78;
+        }
+
+        #pesan {
+            display: none;
+            color: #ff5c8a;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hati">❤️</div>
+    <div class="hati">💕</div>
+    <div class="hati">💗</div>
+    <div class="hati">❤️</div>
+
+    <div class="kotak">
+
+        <h1>Untuk Gabriela ❤️</h1>
+
+        <div class="hewan">
+            🧸 🐼
+        </div>
+
+        <p>
+            Hai Gabriela 🥺❤️
+            <br><br>
+
+            Aku tahu kamu lagi haid dan mungkin
+            lagi merasa sakit atau nggak nyaman.
+            <br><br>
+
+            Jadi jangan terlalu capek ya.
+            Istirahat yang cukup dan jaga diri baik-baik. 🌷
+            <br><br>
+
+            Aku mungkin nggak bisa menghilangkan
+            rasa sakit kamu, tapi aku tetap mau
+            nemenin kamu.
+            <br><br>
+
+            Anggap aja ada beruang 🧸 dan panda 🐼
+            yang selalu siap nemenin dan kasih
+            kamu pelukan. ❤️
+        </p>
+
+        <button onclick="peluk()">
+            Klik untuk pelukan 🫂
+        </button>
+
+        <div id="pesan">
+            🧸 ❤️ 🐼
+            <br><br>
+
+            Sini, peluk dulu 🤗
+            <br>
+            Istirahat ya, sayang.
+            <br>
+            Aku temenin kamu. ❤️
+            <br><br>
+
+            Aku sayang kamu, Gabriela ❤️
+        </div>
+
+    </div>
+
+    <script>
+        function peluk() {
+            document.getElementById("pesan").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
