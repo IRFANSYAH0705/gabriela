@@ -31,14 +31,14 @@
             padding: 20px;
         }
 
-        /* =========================
+        /* =====================
            SURAT
-        ========================= */
+        ===================== */
 
         .surat-awal {
             text-align: center;
             cursor: pointer;
-            animation: muncul 1.2s ease;
+            animation: muncul 1s ease;
         }
 
         .surat-awal h1 {
@@ -49,8 +49,8 @@
         .surat {
             width: 260px;
             height: 175px;
-            background: #fff;
-            border-radius: 8px;
+            background: white;
+            border-radius: 10px;
             position: relative;
             margin: auto;
             box-shadow: 0 12px 30px rgba(0,0,0,0.15);
@@ -89,7 +89,7 @@
             top: 52%;
             transform: translate(-50%, -50%);
             font-size: 42px;
-            z-index: 4;
+            z-index: 5;
             animation: detak 1.2s infinite;
         }
 
@@ -99,72 +99,30 @@
             animation: naikTurun 1.5s infinite;
         }
 
-        @keyframes detak {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-
-            50% {
-                transform: translate(-50%, -50%) scale(1.18);
-            }
-        }
-
-        @keyframes naikTurun {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @keyframes muncul {
-            from {
-                opacity: 0;
-                transform: scale(0.7);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* =========================
-           ISI SURAT
-        ========================= */
+        /* =====================
+           ISI
+        ===================== */
 
         .isi {
             display: none;
-            width: 95%;
+            width: 100%;
             max-width: 760px;
             text-align: center;
-            animation: suratMasuk 1s ease;
-        }
-
-        @keyframes suratMasuk {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            animation: masuk 0.8s ease;
         }
 
         .kartu {
-            background: rgba(255,255,255,0.95);
+            width: 100%;
+            background: rgba(255,255,255,0.96);
             border-radius: 30px;
-            padding: 25px 20px;
+            padding: clamp(20px, 4vw, 35px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         .kartu h1 {
             color: #ff6f91;
             margin-top: 0;
+            font-size: clamp(25px, 4vw, 34px);
         }
 
         .pesan {
@@ -172,14 +130,15 @@
             margin: auto;
             color: #555;
             line-height: 1.7;
+            font-size: clamp(14px, 2vw, 16px);
         }
 
-        /* =========================
+        /* =====================
            AREA BERUANG
-        ========================= */
+        ===================== */
 
         .area-beruang {
-            height: 330px;
+            height: clamp(270px, 38vw, 330px);
             width: 100%;
             max-width: 700px;
             margin: 15px auto 5px;
@@ -197,49 +156,183 @@
             border-radius: 50%;
         }
 
-        /* =========================
+        /* =====================
            BERUANG
-        ========================= */
+        ===================== */
 
         .beruang {
             position: absolute;
             bottom: 22px;
-            width: 130px;
-            height: 250px;
+            width: clamp(100px, 13vw, 130px);
+            height: clamp(190px, 25vw, 250px);
             transform-origin: bottom center;
-            animation: napas 2.2s ease-in-out infinite;
         }
 
         .beruang.kiri {
             left: 5%;
-            animation:
-                jalanKiri 2.8s ease-in-out forwards,
-                napas 2.2s ease-in-out infinite 2.8s;
+            animation: jalanKiri 3s ease-in-out forwards;
         }
 
         .beruang.kanan {
             right: 5%;
-            animation:
-                jalanKanan 2.8s ease-in-out forwards,
-                napas 2.2s ease-in-out infinite 2.8s;
+            animation: jalanKanan 3s ease-in-out forwards;
         }
 
+        /* Kepala */
+
+        .kepala {
+            position: absolute;
+            width: 80%;
+            aspect-ratio: 1.1;
+            background: #a86d43;
+            border-radius: 50%;
+            left: 10%;
+            top: 2%;
+            z-index: 3;
+        }
+
+        .telinga {
+            position: absolute;
+            width: 36%;
+            aspect-ratio: 1;
+            background: #8d5a38;
+            border-radius: 50%;
+            top: -8%;
+        }
+
+        .telinga.kiri {
+            left: 0;
+        }
+
+        .telinga.kanan {
+            right: 0;
+        }
+
+        .mata {
+            position: absolute;
+            width: 8%;
+            aspect-ratio: 1;
+            background: #222;
+            border-radius: 50%;
+            top: 40%;
+        }
+
+        .mata.kiri {
+            left: 28%;
+        }
+
+        .mata.kanan {
+            right: 28%;
+        }
+
+        .moncong {
+            position: absolute;
+            width: 40%;
+            height: 30%;
+            background: #d79a6b;
+            border-radius: 50%;
+            left: 30%;
+            top: 50%;
+        }
+
+        .hidung {
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background: #29201d;
+            border-radius: 50%;
+            left: 35%;
+            top: 15%;
+        }
+
+        /* Badan */
+
+        .badan {
+            position: absolute;
+            width: 80%;
+            height: 50%;
+            background: #a86d43;
+            border-radius: 50px;
+            left: 10%;
+            top: 34%;
+        }
+
+        .perut {
+            position: absolute;
+            width: 55%;
+            height: 60%;
+            background: #d99b6d;
+            border-radius: 50%;
+            left: 22%;
+            top: 20%;
+        }
+
+        /* Kaki */
+
+        .kaki {
+            position: absolute;
+            width: 34%;
+            height: 23%;
+            background: #8d5a38;
+            border-radius: 50%;
+            bottom: 0;
+        }
+
+        .kaki.kiri {
+            left: 8%;
+        }
+
+        .kaki.kanan {
+            right: 8%;
+        }
+
+        /* Tangan */
+
+        .tangan {
+            position: absolute;
+            width: 58%;
+            height: 11%;
+            background: #a86d43;
+            border-radius: 25px;
+            top: 47%;
+            z-index: 4;
+        }
+
+        .tangan.kiri {
+            left: -35%;
+            transform: rotate(30deg);
+        }
+
+        .tangan.kanan {
+            right: -35%;
+            transform: rotate(-30deg);
+        }
+
+        /* =====================
+           ANIMASI BERJALAN
+        ===================== */
+
         @keyframes jalanKiri {
+
             0% {
                 left: 5%;
-                transform: rotate(0deg);
+                transform: rotate(0deg) translateY(0);
             }
 
-            25% {
+            20% {
                 transform: rotate(-5deg) translateY(-5px);
             }
 
-            50% {
+            40% {
                 transform: rotate(5deg) translateY(0);
             }
 
-            75% {
-                transform: rotate(-4deg) translateY(-4px);
+            60% {
+                transform: rotate(-5deg) translateY(-5px);
+            }
+
+            80% {
+                transform: rotate(4deg) translateY(0);
             }
 
             100% {
@@ -249,21 +342,26 @@
         }
 
         @keyframes jalanKanan {
+
             0% {
                 right: 5%;
-                transform: rotate(0deg);
+                transform: rotate(0deg) translateY(0);
             }
 
-            25% {
+            20% {
                 transform: rotate(5deg) translateY(-5px);
             }
 
-            50% {
+            40% {
                 transform: rotate(-5deg) translateY(0);
             }
 
-            75% {
-                transform: rotate(4deg) translateY(-4px);
+            60% {
+                transform: rotate(5deg) translateY(-5px);
+            }
+
+            80% {
+                transform: rotate(-4deg) translateY(0);
             }
 
             100% {
@@ -272,149 +370,9 @@
             }
         }
 
-        @keyframes napas {
-            0%, 100% {
-                transform: scaleY(1);
-            }
-
-            50% {
-                transform: scaleY(1.025);
-            }
-        }
-
-        /* Kepala */
-
-        .kepala {
-            position: absolute;
-            width: 105px;
-            height: 95px;
-            background: #a86d43;
-            border-radius: 50%;
-            left: 12px;
-            top: 5px;
-            z-index: 3;
-        }
-
-        .telinga {
-            position: absolute;
-            width: 38px;
-            height: 38px;
-            background: #8d5a38;
-            border-radius: 50%;
-            top: -8px;
-        }
-
-        .telinga.kiri {
-            left: 2px;
-        }
-
-        .telinga.kanan {
-            right: 2px;
-        }
-
-        .mata {
-            position: absolute;
-            width: 9px;
-            height: 9px;
-            background: #222;
-            border-radius: 50%;
-            top: 38px;
-        }
-
-        .mata.kiri {
-            left: 29px;
-        }
-
-        .mata.kanan {
-            right: 29px;
-        }
-
-        .moncong {
-            position: absolute;
-            width: 42px;
-            height: 32px;
-            background: #d79a6b;
-            border-radius: 50%;
-            left: 32px;
-            top: 49px;
-        }
-
-        .hidung {
-            position: absolute;
-            width: 14px;
-            height: 11px;
-            background: #29201d;
-            border-radius: 50%;
-            left: 14px;
-            top: 7px;
-        }
-
-        /* Badan */
-
-        .badan {
-            position: absolute;
-            width: 105px;
-            height: 125px;
-            background: #a86d43;
-            border-radius: 50px;
-            left: 12px;
-            top: 82px;
-        }
-
-        .perut {
-            position: absolute;
-            width: 58px;
-            height: 75px;
-            background: #d99b6d;
-            border-radius: 50%;
-            left: 23px;
-            top: 25px;
-        }
-
-        /* Kaki */
-
-        .kaki {
-            position: absolute;
-            width: 45px;
-            height: 58px;
-            background: #8d5a38;
-            border-radius: 50%;
-            bottom: 0;
-        }
-
-        .kaki.kiri {
-            left: 8px;
-        }
-
-        .kaki.kanan {
-            right: 8px;
-        }
-
-        /* Tangan */
-
-        .tangan {
-            position: absolute;
-            width: 75px;
-            height: 28px;
-            background: #a86d43;
-            border-radius: 25px;
-            top: 115px;
-            z-index: 4;
-        }
-
-        .tangan.kiri {
-            left: -45px;
-            transform: rotate(30deg);
-        }
-
-        .tangan.kanan {
-            right: -45px;
-            transform: rotate(-30deg);
-        }
-
-        /* =========================
-           TOMBOL PELUK
-        ========================= */
+        /* =====================
+           TOMBOL
+        ===================== */
 
         .tombol {
             border: none;
@@ -422,10 +380,10 @@
             color: white;
             padding: 14px 28px;
             border-radius: 30px;
-            font-size: 17px;
+            font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255,111,145,0.3);
             transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255,111,145,0.3);
         }
 
         .tombol:hover {
@@ -433,32 +391,38 @@
             background: #ff4f78;
         }
 
-        /* =========================
-           SAAT PELUKAN
-        ========================= */
+        /* =====================
+           ANIMASI PELUK
+        ===================== */
 
         .pelukan .beruang.kiri {
-            animation: pelukKiri 1.8s ease-in-out forwards;
+            animation: pelukKiri 2s ease-in-out forwards;
         }
 
         .pelukan .beruang.kanan {
-            animation: pelukKanan 1.8s ease-in-out forwards;
+            animation: pelukKanan 2s ease-in-out forwards;
         }
 
         @keyframes pelukKiri {
+
             0% {
                 left: 37%;
                 transform: rotate(0deg);
             }
 
-            40% {
-                left: 42%;
-                transform: rotate(-5deg) translateY(-5px);
+            30% {
+                left: 41%;
+                transform: rotate(-5deg) translateY(-6px);
             }
 
-            70% {
+            55% {
+                left: 43%;
+                transform: rotate(4deg);
+            }
+
+            75% {
                 left: 42%;
-                transform: rotate(5deg);
+                transform: rotate(-3deg);
             }
 
             100% {
@@ -468,19 +432,25 @@
         }
 
         @keyframes pelukKanan {
+
             0% {
                 right: 37%;
                 transform: rotate(0deg);
             }
 
-            40% {
-                right: 42%;
-                transform: rotate(5deg) translateY(-5px);
+            30% {
+                right: 41%;
+                transform: rotate(5deg) translateY(-6px);
             }
 
-            70% {
+            55% {
+                right: 43%;
+                transform: rotate(-4deg);
+            }
+
+            75% {
                 right: 42%;
-                transform: rotate(-5deg);
+                transform: rotate(3deg);
             }
 
             100% {
@@ -490,16 +460,21 @@
         }
 
         .pelukan .tangan.kanan {
-            animation: tanganPelukKanan 1.8s forwards;
+            animation: tanganKanan 2s forwards;
         }
 
         .pelukan .tangan.kiri {
-            animation: tanganPelukKiri 1.8s forwards;
+            animation: tanganKiri 2s forwards;
         }
 
-        @keyframes tanganPelukKanan {
+        @keyframes tanganKanan {
+
             0% {
                 transform: rotate(-30deg);
+            }
+
+            50% {
+                transform: rotate(20deg);
             }
 
             100% {
@@ -507,15 +482,24 @@
             }
         }
 
-        @keyframes tanganPelukKiri {
+        @keyframes tanganKiri {
+
             0% {
                 transform: rotate(30deg);
+            }
+
+            50% {
+                transform: rotate(-20deg);
             }
 
             100% {
                 transform: rotate(-35deg);
             }
         }
+
+        /* =====================
+           HATI
+        ===================== */
 
         .hati-pelukan {
             position: absolute;
@@ -524,20 +508,43 @@
             transform: translateX(-50%);
             font-size: 40px;
             opacity: 0;
-            pointer-events: none;
         }
 
         .pelukan .hati-pelukan {
             animation: hatiMuncul 2s ease forwards;
         }
 
+        .hati-kecil {
+            position: absolute;
+            left: 50%;
+            top: 110px;
+            font-size: 23px;
+            opacity: 0;
+        }
+
+        .pelukan .hati-kecil.satu {
+            animation: terbang 2s .2s forwards;
+            margin-left: -90px;
+        }
+
+        .pelukan .hati-kecil.dua {
+            animation: terbang 2s .4s forwards;
+            margin-left: 70px;
+        }
+
+        .pelukan .hati-kecil.tiga {
+            animation: terbang 2s .6s forwards;
+            margin-left: -30px;
+        }
+
         @keyframes hatiMuncul {
+
             0% {
                 opacity: 0;
-                transform: translate(-50%, 20px) scale(0.5);
+                transform: translate(-50%, 20px) scale(.5);
             }
 
-            40% {
+            50% {
                 opacity: 1;
                 transform: translate(-50%, -10px) scale(1.2);
             }
@@ -548,35 +555,9 @@
             }
         }
 
-        .hati-kecil {
-            position: absolute;
-            left: 50%;
-            top: 100px;
-            font-size: 22px;
-            opacity: 0;
-        }
-
-        .pelukan .hati-kecil {
-            animation: terbang 2.2s ease forwards;
-        }
-
-        .hati-kecil.satu {
-            animation-delay: .2s;
-            margin-left: -80px;
-        }
-
-        .hati-kecil.dua {
-            animation-delay: .4s;
-            margin-left: 65px;
-        }
-
-        .hati-kecil.tiga {
-            animation-delay: .6s;
-            margin-left: -30px;
-        }
-
         @keyframes terbang {
-            from {
+
+            0% {
                 opacity: 0;
                 transform: translateY(20px) scale(.5);
             }
@@ -585,28 +566,120 @@
                 opacity: 1;
             }
 
-            to {
+            100% {
                 opacity: 0;
                 transform: translateY(-100px) scale(1.2);
             }
         }
 
+        /* =====================
+           PESAN PELUKAN
+        ===================== */
+
         #pesanPelukan {
             display: none;
             color: #ff5c8a;
             font-weight: bold;
+            line-height: 1.7;
             margin-top: 18px;
-            line-height: 1.6;
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* =====================
+           ANIMASI UMUM
+        ===================== */
+
+        @keyframes detak {
+
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.18);
+            }
+        }
+
+        @keyframes naikTurun {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes muncul {
+
+            from {
+                opacity: 0;
+                transform: scale(.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes masuk {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =====================
+           HP
+        ===================== */
 
         @media (max-width: 600px) {
 
+            body {
+                align-items: flex-start;
+            }
+
+            .halaman {
+                padding: 12px;
+                padding-top: 25px;
+                align-items: flex-start;
+            }
+
+            .surat-awal h1 {
+                font-size: 24px;
+            }
+
+            .surat {
+                width: 230px;
+                height: 155px;
+            }
+
+            .surat::before {
+                border-left-width: 115px;
+                border-right-width: 115px;
+                border-top-width: 80px;
+            }
+
+            .surat::after {
+                border-left-width: 115px;
+                border-right-width: 115px;
+                border-top-width: 80px;
+            }
+
+            .isi {
+                width: 100%;
+            }
+
             .kartu {
-                padding: 20px 12px;
+                border-radius: 24px;
+                padding: 20px 14px;
             }
 
             .kartu h1 {
@@ -615,13 +688,19 @@
 
             .pesan {
                 font-size: 14px;
+                line-height: 1.6;
             }
 
             .area-beruang {
-                height: 280px;
-                transform: scale(.85);
-                margin-top: 0;
-                margin-bottom: -20px;
+                height: 270px;
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+
+            .beruang {
+                width: 100px;
+                height: 195px;
+                bottom: 18px;
             }
 
             .beruang.kiri {
@@ -633,43 +712,125 @@
             }
 
             @keyframes jalanKiri {
+
                 0% {
                     left: 0;
                 }
 
+                20% {
+                    transform: rotate(-5deg) translateY(-4px);
+                }
+
+                40% {
+                    transform: rotate(5deg);
+                }
+
+                60% {
+                    transform: rotate(-5deg) translateY(-4px);
+                }
+
                 100% {
-                    left: 27%;
+                    left: 29%;
+                    transform: rotate(0deg);
                 }
             }
 
             @keyframes jalanKanan {
+
                 0% {
                     right: 0;
                 }
 
+                20% {
+                    transform: rotate(5deg) translateY(-4px);
+                }
+
+                40% {
+                    transform: rotate(-5deg);
+                }
+
+                60% {
+                    transform: rotate(5deg) translateY(-4px);
+                }
+
                 100% {
-                    right: 27%;
+                    right: 29%;
+                    transform: rotate(0deg);
                 }
             }
 
             @keyframes pelukKiri {
+
                 0% {
-                    left: 27%;
+                    left: 29%;
+                }
+
+                50% {
+                    left: 35%;
+                    transform: rotate(-5deg) translateY(-5px);
                 }
 
                 100% {
                     left: 34%;
+                    transform: rotate(0deg);
                 }
             }
 
             @keyframes pelukKanan {
+
                 0% {
-                    right: 27%;
+                    right: 29%;
+                }
+
+                50% {
+                    right: 35%;
+                    transform: rotate(5deg) translateY(-5px);
                 }
 
                 100% {
                     right: 34%;
+                    transform: rotate(0deg);
                 }
+            }
+
+            .tombol {
+                width: 90%;
+                max-width: 280px;
+                padding: 13px 20px;
+            }
+
+            #pesanPelukan {
+                font-size: 14px;
+            }
+        }
+
+        /* HP sangat kecil */
+
+        @media (max-width: 380px) {
+
+            .area-beruang {
+                height: 245px;
+            }
+
+            .beruang {
+                width: 85px;
+                height: 165px;
+            }
+
+            .beruang.kiri {
+                left: -2%;
+            }
+
+            .beruang.kanan {
+                right: -2%;
+            }
+
+            .kartu {
+                padding: 18px 10px;
+            }
+
+            .pesan {
+                font-size: 13px;
             }
         }
     </style>
@@ -679,7 +840,7 @@
 
     <div class="halaman">
 
-        <!-- SURAT AWAL -->
+        <!-- SURAT -->
 
         <div class="surat-awal" id="suratAwal">
 
@@ -700,7 +861,7 @@
         </div>
 
 
-        <!-- ISI SETELAH SURAT DIBUKA -->
+        <!-- ISI SURAT -->
 
         <div class="isi" id="isi">
 
@@ -730,13 +891,13 @@
 
                     <br><br>
 
-                    Sekarang coba lihat dua beruang
-                    kecil di bawah ini. 🧸❤️🧸
+                    Coba lihat dua beruang kecil
+                    di bawah ini. 🧸❤️🧸
 
                 </div>
 
 
-                <!-- AREA BERUANG -->
+                <!-- BERUANG -->
 
                 <div class="area-beruang" id="areaBeruang">
 
@@ -831,7 +992,7 @@
 
                 <div id="pesanPelukan">
 
-                    🧸❤️🧸
+                    🧸 ❤️ 🧸
 
                     <br>
 
@@ -867,13 +1028,21 @@
 
         const suratAwal = document.getElementById("suratAwal");
         const isi = document.getElementById("isi");
-        const tombolPeluk = document.getElementById("tombolPeluk");
-        const pelukLagi = document.getElementById("pelukLagi");
-        const areaBeruang = document.getElementById("areaBeruang");
-        const pesanPelukan = document.getElementById("pesanPelukan");
+
+        const tombolPeluk =
+            document.getElementById("tombolPeluk");
+
+        const pelukLagi =
+            document.getElementById("pelukLagi");
+
+        const areaBeruang =
+            document.getElementById("areaBeruang");
+
+        const pesanPelukan =
+            document.getElementById("pesanPelukan");
 
 
-        // Membuka surat
+        /* BUKA SURAT */
 
         suratAwal.addEventListener("click", function() {
 
@@ -884,7 +1053,7 @@
         });
 
 
-        // Beruang berpelukan
+        /* PELUK */
 
         tombolPeluk.addEventListener("click", function() {
 
@@ -901,7 +1070,7 @@
         });
 
 
-        // Peluk lagi
+        /* PELUK LAGI */
 
         pelukLagi.addEventListener("click", function() {
 
